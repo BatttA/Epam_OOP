@@ -1,8 +1,9 @@
-package students.service;
+package students.service.Impl;
 
 import students.repository.Group;
+import students.service.CountInterface;
 
-public class CountService implements CountInterface {
+public class CountServiceImpl implements CountInterface {
     private final int FIVE = 5;
     private final int TWO = 2;
 
@@ -13,10 +14,10 @@ public class CountService implements CountInterface {
 
         for (int i = 0; i < quanStudGroup; i++){
             int temp = 0;
-            for (int j = 0; j < group.getStudents()[i].getStudentProgressProgress().getMarks().length; j++){
-                if(group.getStudents()[i].getStudentProgressProgress().getMarks()[j] == FIVE){
+            for (int j = 0; j < group.getStudents()[i].getStudentProgress().getMarks().length; j++){
+                if(group.getStudents()[i].getStudentProgress().getMarks()[j] == FIVE){
                     temp++;
-                    if(temp == group.getStudents()[i].getStudentProgressProgress().getMarks().length){
+                    if(temp == group.getStudents()[i].getStudentProgress().getMarks().length){
                         countSucStud++;
                     }
                 }
@@ -31,8 +32,8 @@ public class CountService implements CountInterface {
         int countUnsucStud = 0;
 
         for (int i = 0; i < quanStudGroup; i++){
-            for (int j = 0; j < group.getStudents()[i].getStudentProgressProgress().getMarks().length; j++){
-                if(group.getStudents()[i].getStudentProgressProgress().getMarks()[j] <= TWO){
+            for (int j = 0; j < group.getStudents()[i].getStudentProgress().getMarks().length; j++){
+                if(group.getStudents()[i].getStudentProgress().getMarks()[j] <= TWO){
                     countUnsucStud++;
                     break;
                 }

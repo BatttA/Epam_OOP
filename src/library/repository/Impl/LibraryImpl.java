@@ -1,12 +1,12 @@
-package library.repository;
+package library.repository.Impl;
 
 import library.entity.Book;
-import library.service.LibraryService;
+import library.repository.LibraryInterface;
 
-public class Library implements LibraryService {
+public class LibraryImpl implements LibraryInterface {
     private Book[] books;
 
-    public Library(int bookquantity) {
+    public LibraryImpl(int bookquantity) {
         this.books = new Book[bookquantity];
     }
 

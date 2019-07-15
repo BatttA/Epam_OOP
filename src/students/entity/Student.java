@@ -1,18 +1,16 @@
 package students.entity;
 
-import students.repository.StudentProgress;
-
 public class Student {
     private int id;
     private String firstName;
     private String lastName;
     private StudentProgress studentProgress;
 
-    public Student(int id, String firstName, String lastName, int mark1, int mark2, int mark3, int mark4) {
+    public Student(int id, String firstName, String lastName, StudentProgress studentProgress) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.studentProgress = new StudentProgress(mark1, mark2, mark3, mark4);
+        this.studentProgress = studentProgress;
     }
 
     public int getId() {
@@ -27,7 +25,7 @@ public class Student {
         return lastName;
     }
 
-    public StudentProgress getStudentProgressProgress() {
+    public StudentProgress getStudentProgress() {
         return studentProgress;
     }
 
@@ -36,6 +34,7 @@ public class Student {
         return "Student" +
                 "ID: " + id +
                 ", Имя: " + firstName +
-                ", Фамилия: " + lastName;
+                ", Фамилия: " + lastName +
+                ", " + studentProgress;
     }
 }

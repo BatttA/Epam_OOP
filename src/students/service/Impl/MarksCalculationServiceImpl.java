@@ -1,17 +1,18 @@
-package students.service;
+package students.service.Impl;
 
 import students.entity.Student;
 import students.repository.Group;
+import students.service.MarksCalculationInterface;
 
-public class MarksCalculationService implements MarksCalculationInterface {
+public class MarksCalculationServiceImpl implements MarksCalculationInterface {
     @Override
     public double averStudentMark(Student student) {
         double averMark = 0;
         double allMarks = 0;
-        double quanMarks = student.getStudentProgressProgress().getMarks().length;
+        double quanMarks = student.getStudentProgress().getMarks().length;
 
         for (int i = 0; i < quanMarks; i++) {
-            allMarks += student.getStudentProgressProgress().getMarks()[i];
+            allMarks += student.getStudentProgress().getMarks()[i];
         }
         averMark = allMarks / quanMarks;
         return averMark;
@@ -23,7 +24,7 @@ public class MarksCalculationService implements MarksCalculationInterface {
         double allMarks = 0;
         double quanStudGroup = group.getStudents().length;
 
-        for (int i = 0; i < quanStudGroup; i++){
+        for (int i = 0; i < quanStudGroup; i++) {
             allMarks += averStudentMark(group.getStudents()[i]);
         }
         averMarkGroup = allMarks / quanStudGroup;

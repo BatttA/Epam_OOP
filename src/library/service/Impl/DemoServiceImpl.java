@@ -1,12 +1,13 @@
-package library.service;
+package library.service.Impl;
 
 import library.entity.Book;
-import library.repository.Library;
+import library.repository.Impl.LibraryImpl;
+import library.service.DemoInterface;
 
-public class DemoService implements DemoInterface {
-    Library library;
+public class DemoServiceImpl implements DemoInterface {
+    LibraryImpl library;
 
-    public DemoService(Library library) {
+    public DemoServiceImpl(LibraryImpl library) {
         this.library = library;
     }
 

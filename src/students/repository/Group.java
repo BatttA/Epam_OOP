@@ -19,6 +19,15 @@ public class Group {
         }
     }
 
+    public void deleteStudent(int id) {
+        for (int i = 0; i < students.length; i++) {
+            if (students[i].getId() == id) {
+                students[i] = null;
+                break;
+            }
+        }
+    }
+
     public Student[] getStudents() {
         return students;
     }

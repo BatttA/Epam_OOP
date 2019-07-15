@@ -1,12 +1,12 @@
 package library;
 
-import library.repository.Library;
-import library.service.DemoService;
+import library.repository.Impl.LibraryImpl;
+import library.service.Impl.DemoServiceImpl;
 
 public class StartLibrary {
     public static void main(String[] args) {
-        Library library = new Library(4);
-        DemoService demoService = new DemoService(library);
+        LibraryImpl library = new LibraryImpl(4);
+        DemoServiceImpl demoService = new DemoServiceImpl(library);
         demoService.runTestStart();
     }
 }

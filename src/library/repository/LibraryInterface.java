@@ -1,8 +1,8 @@
-package library.service;
+package library.repository;
 
 import library.entity.Book;
 
-public interface LibraryService {
+public interface LibraryInterface {
     void addBook(Book book);
 
     void deleteBook(String name);
